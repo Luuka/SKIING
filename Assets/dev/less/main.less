@@ -269,12 +269,39 @@
         }
 
         .quad {
-
             margin: 0;
 
-            img {
+            & > div {
+                margin: 0;
+                position: relative;
+
+                &:hover {
+                    &:before {
+                        border: 5px solid @red;
+                        transform : scale(0.9);
+                    }
+                }
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    width: 75%;
+                    height: 75%;
+                    border: 5px solid transparent;
+
+                    top: 10%;
+                    left:10%;
+                    transform : scale(1);
+                    transition: all ease .5s;
+                    transform-origin: center;
+                }
+
                 &:nth-child(1), &:nth-child(3) {
                     margin-left:0;
+                }
+
+                &:nth-child(2), &:nth-child(4) {
+                    margin-left:15px;
                 }
 
                 &:nth-child(3), &:nth-child(4) {
@@ -285,9 +312,31 @@
 
         .solo {
             margin: 0;
+            position: relative;
 
             img {
                 height: 475px;
+            }
+
+            &:hover {
+                &:before {
+                    border: 5px solid @red;
+                    transform : scale(0.9);
+                }
+            }
+
+            &:before {
+                content: '';
+                position: absolute;
+                width: 75%;
+                height: 75%;
+                border: 10px solid transparent;
+
+                top: 10%;
+                left:10%;
+                transform : scale(1);
+                transition: all ease .5s;
+                transform-origin: center;
             }
         }
     }
