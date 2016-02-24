@@ -232,3 +232,34 @@
 .sixth > div .solo {
   margin: 0;
 }
+.sixth > div .solo img {
+  height: 475px;
+}
+footer {
+  font-family: 'ChampagneLimousines', serif;
+  font-weight: bold;
+  background: #4d5059;
+}
+footer .links {
+  border-bottom: 1px solid #303030;
+  padding-bottom: 25px;
+}
+footer .links ul li {
+  list-style: none;
+}
+footer .links ul li:first-child {
+  font-size: 30px;
+  color: #303030;
+}
+footer .links ul li a {
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+}
+footer .downline {
+  color: white;
+  text-align: center;
+  font-size: 25px;
+  font-weight: normal;
+  padding: 10px;
+}

@@ -4,6 +4,8 @@
 @red: #e53935;
 @lightgrey: #f6f6f6;
 @grey: #818384;
+@darkgrey : #4d5059;
+@mediumgrey : #303030;
 /***************/
 
 
@@ -283,6 +285,45 @@
 
         .solo {
             margin: 0;
+
+            img {
+                height: 475px;
+            }
         }
+    }
+}
+
+footer {
+    font-family: 'ChampagneLimousines', serif;
+    font-weight: bold;
+    background: @darkgrey;
+
+    .links {
+        border-bottom: 1px solid @mediumgrey;
+        padding-bottom: 25px;
+
+        ul {
+            li {
+                &:first-child {
+                    font-size: 30px;
+                    color: @mediumgrey;
+                }
+                list-style: none;
+
+                a {
+                    color: white;
+                    font-size: 20px;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    .downline {
+        color: white;
+        text-align: center;
+        font-size: 25px;
+        font-weight: normal;
+        padding: 10px;
     }
 }
