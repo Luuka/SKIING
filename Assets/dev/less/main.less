@@ -1,0 +1,288 @@
+/***** VARS ****/
+
+@bluegrey: #384048;
+@red: #e53935;
+@lightgrey: #f6f6f6;
+@grey: #818384;
+/***************/
+
+
+.firstSlide {
+    height: 850px;
+    background: url(../imgs/mountains1.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: bottom;
+
+    h1 {
+        font-size: 50px;
+        line-height: 150px;
+        font-family: 'ChampagneLimousines', serif;
+        font-weight: bold;
+        padding: 5px;
+    }
+
+    header {
+        height: 150px;
+        border-bottom: 1px solid grey;
+        color: @bluegrey;
+        div {
+            width: 1000px;
+
+            nav {
+                height: 150px;
+
+                li {
+                    font-size: 25px;
+                    margin: 0 15px;
+                    line-height: 150px;
+                    font-family: 'ChampagneLimousines', serif;
+                    font-weight: bold;
+
+                    a {
+                        color: @bluegrey;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .content {
+        position: relative;
+        height: 700px;
+
+        .text {
+            position: absolute;
+            bottom: 250px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            font-family: 'ChampagneLimousines', serif;
+            font-weight: bold;
+            color: white;
+            text-shadow : 0 0 5px 5px black;
+
+            span {
+                font-size: 170px;
+                text-shadow: 0 0 5px #000;
+            }
+
+            p {
+                font-size: 25px;
+                text-shadow: 0 0 2px #000;
+            }
+
+        }
+
+        .btns {
+            position: absolute;
+            bottom: 120px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+
+            .btn {
+                display: inline-block;
+                margin: 0 10px;
+                width: 270px;
+                height: 75px;
+                border-radius: 5px;
+                border:3px solid;
+                color: white;
+                line-height: 70px;
+                text-decoration: none;
+                font-family: 'ChampagneLimousines', serif;
+                font-weight: bold;
+                font-size: 20px;
+
+                &-red {
+                    background: @red;
+                    border-color: @red;
+                }
+
+                &-transparent {
+                    background: transparent;
+                    border-color: white;
+                    text-shadow: 0 0 2px #000;
+                }
+            }
+        }
+    }
+}
+
+
+.secondSlide {
+    background: @lightgrey;
+
+    & > div {
+        width: 1000px;
+        margin: auto !important;
+
+        div {
+            font-family: 'ChampagneLimousines', serif;
+            font-weight: bold;
+            margin-top: 30px;
+            margin-bottom: 30px;
+
+            & > .circle {
+                width: 165px;
+                height: 165px;
+                border-radius: 200px;
+                background: @red;
+            }
+
+            h3 {
+                font-size: 40px;
+                color: @red;
+            }
+
+            p {
+                font-size: 20px;
+                line-height: 38px;
+                color: @grey;
+            }
+        }
+    }
+}
+
+.thirdSlide {
+    height: 1000px;
+    background: url(../imgs/mountains2.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: bottom;
+
+    .content {
+        width: 1000px;
+        font-family: 'ChampagneLimousines', serif;
+        padding-top: 80px;
+
+        h4 {
+            color: @red;
+            font-size: 45px;
+            text-shadow: 0 0 2px #000;
+            font-weight: bold;
+        }
+
+        p {
+            font-size: 30px;
+            color: white;
+            line-height: 55px;
+        }
+    }
+
+}
+
+.fourthSlide {
+    background:@lightgrey;
+    height: 700px;
+
+    & > div {
+        position: relative;
+        top: -160px;
+        width: 1200px;
+        margin: auto !important;
+
+        & > div {
+            background: white;
+            height: 775px;
+            border-radius: 5px;
+            border : 1px solid @grey;
+
+            & > .content {
+                padding: 25px;
+                font-family: 'ChampagneLimousines', serif;
+
+                h4 {
+                    font-size: 35px;
+                    color: @red;
+                    margin-bottom: 0;
+                }
+
+                p {
+                    font-size: 23px;
+                    color: @bluegrey;
+                }
+
+                .btn {
+                    display: block;
+                    border: 3px solid @red;
+                    padding:5px;
+                    border-radius: 50px;
+                    font-size: 25px;
+                    text-decoration: none;
+                    color: @red;
+                    width: 150px;
+                    text-align: center;
+                    font-weight: bold;
+                    margin-top: 30px;
+                    transition: all ease .5s;
+
+                    &:hover {
+                        background: @red;
+                        color: white;
+                    }
+                }
+
+            }
+
+        }
+    }
+}
+
+.quote {
+    height: 150px;
+    background: @red;
+    font-family: 'ChampagneLimousines', serif;
+
+    img {
+        margin-top: 10px;
+    }
+
+    & > div {
+        margin-top: 25px;
+        blockquote {
+            color: white;
+            font-size: 30px;
+            line-height: 50px;
+        }
+
+        p {
+            color: white;
+            font-size: 15px;
+        }
+    }
+}
+
+.sixth {
+    background: @lightgrey;
+    padding-top: 50px;
+    & > div {
+        width: 1000px;
+        margin-bottom: 50px;
+
+        img {
+            border: 5px solid @red;
+        }
+
+        .quad {
+
+            margin: 0;
+
+            img {
+                &:nth-child(1), &:nth-child(3) {
+                    margin-left:0;
+                }
+
+                &:nth-child(3), &:nth-child(4) {
+                    margin-top: 25px;
+                }
+            }
+        }
+
+        .solo {
+            margin: 0;
+        }
+    }
+}
