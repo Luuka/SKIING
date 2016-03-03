@@ -6,7 +6,7 @@ var gulp = require('gulp'),
     cssnano = require('gulp-cssnano');
 
 gulp.task('styles', function() {
-  return gulp.src('./Assets/dev/less/*.less')
+  return gulp.src('./Assets/dev/less/main.less')
     .pipe(less())
     .pipe(autoprefixer('last 2 version'))
     .pipe(gulp.dest('./Assets/build/css/'))
@@ -18,7 +18,7 @@ gulp.task('styles', function() {
 gulp.task('knacss', function() {
     return gulp.src('./Assets/dev/knacss/knacss.less')
     .pipe(less())
-    .pipe(autoprefixer('last 2 version'))
+    .pipe(autoprefixer('last 4 version'))
     .pipe(rename({ suffix: '.min' }))
     .pipe(cssnano())
     .pipe(gulp.dest('./Assets/build/css/'));
@@ -53,7 +53,7 @@ gulp.task('header', function(){
 });
 
 gulp.task('watch', ['build'], function() {
-  gulp.watch('./Assets/dev/less/*.less', ['styles']);
+  gulp.watch('./Assets/dev/less/main.less', ['styles']);
   gulp.watch('./Assets/dev/imgs/*.*', ['imgs']);
   gulp.watch('./Assets/dev/js/*.js', ['js']);
   gulp.watch('./Assets/dev/knacss/knacss.less', ['knacss']);

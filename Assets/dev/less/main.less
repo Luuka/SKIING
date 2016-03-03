@@ -1,3 +1,5 @@
+@import "./knacss.less";
+
 /***** VARS ****/
 
 @bluegrey: #384048;
@@ -6,54 +8,81 @@
 @grey: #818384;
 @darkgrey : #4d5059;
 @mediumgrey : #303030;
-/***************/
 
+/***************/
 
 .firstSlide {
     height: 850px;
-    background: url(../imgs/mountains1.jpg);
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: bottom;
-
+    @media screen and (max-width: @medium-screen) {
+        height: auto;
+    }
     h1 {
         font-size: 50px;
         line-height: 150px;
         font-family: 'ChampagneLimousines', serif;
         font-weight: bold;
         padding: 5px;
+        @media screen and (max-width: @medium-screen) {
+            display: block;
+            text-align: center;
+            margin-bottom: 0;
+        }
     }
-
     header {
         height: 150px;
         border-bottom: 1px solid grey;
         color: @bluegrey;
+        @media screen and (max-width: @medium-screen) {
+            height: auto;
+        }
         div {
             width: 1000px;
-
+            @media screen and (max-width: @medium-screen) {
+                width: auto;
+            }
             nav {
                 height: 150px;
-
+                @media screen and (max-width: @medium-screen) {
+                    height: auto;
+                    float: none;
+                }
                 li {
                     font-size: 25px;
                     margin: 0 15px;
                     line-height: 150px;
                     font-family: 'ChampagneLimousines', serif;
                     font-weight: bold;
-
+                    @media screen and (max-width: @medium-screen) {
+                        display: block;
+                        height: 50px;
+                        text-align: center;
+                        line-height: 50px;
+                    }
                     a {
                         color: @bluegrey;
                         text-decoration: none;
+                        position: relative;
+                        &:hover:after {
+                            width: 100%;
+                        }
+                        &:after {
+                            content: '';
+                            position: absolute;
+                            background: @bluegrey;
+                            width: 0%;
+                            height: 2px;
+                            left: 0;
+                            bottom: -5px;
+                            transition: all .5s ease;
+                        }
                     }
                 }
             }
         }
     }
-
     .content {
         position: relative;
         height: 700px;
-
         .text {
             position: absolute;
             bottom: 250px;
@@ -63,82 +92,86 @@
             font-family: 'ChampagneLimousines', serif;
             font-weight: bold;
             color: white;
-            text-shadow : 0 0 5px 5px black;
-
+            text-shadow: 0 0 5px 5px black;
             span {
                 font-size: 170px;
                 text-shadow: 0 0 5px #000;
+                @media screen and (max-width: @small-screen) {
+                    font-size: 100px;
+                }
             }
-
             p {
                 font-size: 25px;
                 text-shadow: 0 0 2px #000;
             }
-
         }
-
         .btns {
             position: absolute;
             bottom: 120px;
             left: 0;
             right: 0;
             margin: 0 auto;
-
+            @media screen and (max-width: @small-screen) {
+                bottom: 50px;
+            }
             .btn {
                 display: inline-block;
                 margin: 0 10px;
                 width: 270px;
                 height: 75px;
                 border-radius: 5px;
-                border:3px solid;
+                border: 3px solid;
                 color: white;
                 line-height: 70px;
                 text-decoration: none;
                 font-family: 'ChampagneLimousines', serif;
                 font-weight: bold;
                 font-size: 20px;
-
+                transition: all ease .5s;
+                @media screen and (max-width: @small-screen) {
+                    margin-top: 20px;
+                }
                 &-red {
                     background: @red;
                     border-color: @red;
+                    &:hover {
+                        background: transparent;
+                    }
                 }
-
                 &-transparent {
                     background: transparent;
                     border-color: white;
                     text-shadow: 0 0 2px #000;
+                    &:hover {
+                        background: white;
+                        color: @red;
+                    }
                 }
             }
         }
     }
 }
 
-
 .secondSlide {
+    overflow: hidden;
     background: @lightgrey;
-
     & > div {
-        width: 1000px;
         margin: auto !important;
-
         div {
             font-family: 'ChampagneLimousines', serif;
             font-weight: bold;
             margin-top: 30px;
             margin-bottom: 30px;
-
             & > .circle {
                 width: 165px;
                 height: 165px;
                 border-radius: 200px;
                 background: @red;
             }
-
             h3 {
                 font-size: 40px;
                 color: @red;
             }
-
             p {
                 font-size: 20px;
                 line-height: 38px;
@@ -149,68 +182,74 @@
 }
 
 .thirdSlide {
-    height: 1000px;
-    background: url(../imgs/mountains2.jpg);
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: bottom;
-
+    overflow: hidden;
+    //margin-bottom: 250px;
+    padding-bottom: 200px;
     .content {
         width: 1000px;
         font-family: 'ChampagneLimousines', serif;
         padding-top: 80px;
-
+        padding-left: 10px;
+        padding-right: 10px;
+        @media screen and (max-width: @medium-screen) {
+            width: 100%;
+        }
         h4 {
             color: @red;
             font-size: 45px;
             text-shadow: 0 0 2px #000;
             font-weight: bold;
         }
-
         p {
             font-size: 30px;
             color: white;
             line-height: 55px;
         }
     }
-
 }
 
 .fourthSlide {
-    background:@lightgrey;
-    height: 700px;
-
+    background: @lightgrey;
+    min-height: 700px;
+    @media screen and (max-width: @small-screen) {
+        height: auto;
+    }
     & > div {
         position: relative;
         top: -160px;
         width: 1200px;
         margin: auto !important;
-
+        @media screen and (max-width: @medium-screen) {
+            width: 95%;
+        }
+        @media screen and (max-width: @small-screen) {
+            max-width: 480px;
+            position: static;
+            & > div {
+                margin: 20px auto 20px auto;
+            }
+        }
         & > div {
             background: white;
-            height: 775px;
+            min-height: 775px;
             border-radius: 5px;
-            border : 1px solid @grey;
-
+            border: 1px solid @grey;
             & > .content {
                 padding: 25px;
                 font-family: 'ChampagneLimousines', serif;
-
                 h4 {
                     font-size: 35px;
                     color: @red;
                     margin-bottom: 0;
                 }
-
                 p {
                     font-size: 23px;
                     color: @bluegrey;
                 }
-
                 .btn {
                     display: block;
                     border: 3px solid @red;
-                    padding:5px;
+                    padding: 5px;
                     border-radius: 50px;
                     font-size: 25px;
                     text-decoration: none;
@@ -220,15 +259,12 @@
                     font-weight: bold;
                     margin-top: 30px;
                     transition: all ease .5s;
-
                     &:hover {
                         background: @red;
                         color: white;
                     }
                 }
-
             }
-
         }
     }
 }
@@ -237,22 +273,34 @@
     height: 150px;
     background: @red;
     font-family: 'ChampagneLimousines', serif;
-
+    overflow: hidden;
+    @media screen and (max-width: @medium-screen) {
+        height: auto;
+    }
     img {
         margin-top: 10px;
     }
-
     & > div {
         margin-top: 25px;
         blockquote {
             color: white;
             font-size: 30px;
             line-height: 50px;
+            @media screen and (max-width: @small-screen) {
+                padding-left: 0;
+            }
+            &:before {
+                @media screen and (max-width: @small-screen) {
+                    content: '';
+                }
+            }
         }
-
         p {
             color: white;
             font-size: 15px;
+            @media screen and (max-width: @medium-screen) {
+                margin-right: 10px;
+            }
         }
     }
 }
@@ -260,83 +308,113 @@
 .sixth {
     background: @lightgrey;
     padding-top: 50px;
+    overflow: hidden;
     & > div {
         width: 1000px;
         margin-bottom: 50px;
-
+        @media screen and (max-width: @medium-screen) {
+            width: auto;
+            & > div {
+                margin-left: 0;
+            }
+        }
         img {
             border: 5px solid @red;
         }
-
         .quad {
             margin: 0;
-
+            @media screen and (max-width: @medium-screen) {
+                width: 100%;
+                text-align: center;
+            }
             & > div {
                 margin: 0;
                 position: relative;
-
+                @media screen and (max-width: @medium-screen) {
+                    width: 90%;
+                    margin-top: 25px;
+                }
+                & > a {
+                    position: relative;
+                    z-index: 10;
+                    display: block;
+                    height: 100%;
+                    width: 100%;
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        width: 75%;
+                        height: 75%;
+                        border: 5px solid transparent;
+                        top: 10%;
+                        left: 10%;
+                        transform: scale(1);
+                        transition: all ease .5s;
+                        transform-origin: center;
+                    }
+                    &:hover {
+                        &:before {
+                            border: 5px solid @red;
+                            transform: scale(0.9);
+                        }
+                    }
+                }
+                &:nth-child(1),
+                &:nth-child(3) {
+                    margin-left: 0;
+                }
+                &:nth-child(2),
+                &:nth-child(4) {
+                    margin-left: 15px;
+                    @media screen and (max-width: @medium-screen) {
+                        margin-left: 0;
+                    }
+                }
+                &:nth-child(3),
+                &:nth-child(4) {
+                    margin-top: 25px;
+                }
+            }
+        }
+        .solo {
+            margin: 0;
+            position: relative;
+            @media screen and (max-width: @medium-screen) {
+                width: 100%;
+                margin-top: 25px;
+                text-align: center;
+            }
+            img {
+                height: 475px;
+                @media screen and (max-width: @medium-screen) {
+                    height: auto;
+                    width: 90%;
+                }
+            }
+            & > a {
+                position: relative;
+                z-index: 10;
+                display: block;
+                height: 100%;
+                width: 100%;
                 &:hover {
                     &:before {
                         border: 5px solid @red;
-                        transform : scale(0.9);
+                        transform: scale(0.9);
                     }
                 }
-
                 &:before {
                     content: '';
                     position: absolute;
                     width: 75%;
                     height: 75%;
-                    border: 5px solid transparent;
-
+                    border: 10px solid transparent;
                     top: 10%;
-                    left:10%;
-                    transform : scale(1);
+                    left: 10%;
+                    transform: scale(1);
                     transition: all ease .5s;
                     transform-origin: center;
                 }
-
-                &:nth-child(1), &:nth-child(3) {
-                    margin-left:0;
-                }
-
-                &:nth-child(2), &:nth-child(4) {
-                    margin-left:15px;
-                }
-
-                &:nth-child(3), &:nth-child(4) {
-                    margin-top: 25px;
-                }
-            }
-        }
-
-        .solo {
-            margin: 0;
-            position: relative;
-
-            img {
-                height: 475px;
-            }
-
-            &:hover {
-                &:before {
-                    border: 5px solid @red;
-                    transform : scale(0.9);
-                }
-            }
-
-            &:before {
-                content: '';
-                position: absolute;
-                width: 75%;
-                height: 75%;
-                border: 10px solid transparent;
-
-                top: 10%;
-                left:10%;
-                transform : scale(1);
-                transition: all ease .5s;
-                transform-origin: center;
             }
         }
     }
@@ -346,11 +424,9 @@ footer {
     font-family: 'ChampagneLimousines', serif;
     font-weight: bold;
     background: @darkgrey;
-
     .links {
         border-bottom: 1px solid @mediumgrey;
         padding-bottom: 25px;
-
         ul {
             li {
                 &:first-child {
@@ -358,7 +434,6 @@ footer {
                     color: @mediumgrey;
                 }
                 list-style: none;
-
                 a {
                     color: white;
                     font-size: 20px;
@@ -367,7 +442,6 @@ footer {
             }
         }
     }
-
     .downline {
         color: white;
         text-align: center;
