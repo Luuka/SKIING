@@ -35,7 +35,6 @@ Skiing come with included libraries :
 - jQuery Inview (https://github.com/protonet/jquery.inview)
 - Magnific Popup (http://dimsemenov.com/plugins/magnific-popup/)
 - Parralax (http://pixelcog.github.io/parallax.js)
-- 
 
 
 
