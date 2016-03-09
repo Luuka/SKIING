@@ -8,17 +8,8 @@ var gulp = require('gulp'),
 gulp.task('styles', function() {
   return gulp.src('./Assets/dev/less/main.less')
     .pipe(less())
-    .pipe(autoprefixer('last 2 version'))
-    .pipe(gulp.dest('./Assets/build/css/'))
-    .pipe(rename({ suffix: '.min' }))
-    .pipe(cssnano())
-    .pipe(gulp.dest('./Assets/build/css/'));
-});
-
-gulp.task('knacss', function() {
-    return gulp.src('./Assets/dev/knacss/knacss.less')
-    .pipe(less())
     .pipe(autoprefixer('last 4 version'))
+    .pipe(gulp.dest('./Assets/build/css/'))
     .pipe(rename({ suffix: '.min' }))
     .pipe(cssnano())
     .pipe(gulp.dest('./Assets/build/css/'));
@@ -40,8 +31,6 @@ gulp.task('js', function(){
     .pipe(gulp.dest('./Assets/build/js'));
 });
 
-gulp.task('build', ['header', 'knacss', 'styles', 'imgs', 'js']);
-
 gulp.task('header', function(){
   console.log('|------------------------------------------------------|');
   console.log('|                                                      |');
@@ -52,9 +41,10 @@ gulp.task('header', function(){
   console.log('|------------------------------------------------------|');
 });
 
+gulp.task('build', ['header', 'styles', 'imgs', 'js']);
+
 gulp.task('watch', ['build'], function() {
   gulp.watch('./Assets/dev/less/main.less', ['styles']);
   gulp.watch('./Assets/dev/imgs/*.*', ['imgs']);
   gulp.watch('./Assets/dev/js/*.js', ['js']);
-  gulp.watch('./Assets/dev/knacss/knacss.less', ['knacss']);
 });
