@@ -1,5 +1,7 @@
 # SKIING
 
+![BY-SA](https://licensebuttons.net/l/by-sa/4.0/88x31.png)
+
 SKIING is a open source website template. It's a responsive and animated one page.
 
 ##Installation
